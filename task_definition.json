@@ -1,8 +1,8 @@
 {
-  "executionRoleArn": "arn:aws:iam::123456789:role/EcsGaRole",
+  "executionRoleArn": "arn:aws:iam::381558044129:role/ecsTaskExecutionRole",
   "containerDefinitions": [{
-    "name": "django_app",
-    "image": "dkr.ecr.eu-west-2.amazonaws.com/ci_cd",
+    "name": "django-poc",
+    "image": "381558044129.dkr.ecr.eu-west-1.amazonaws.com/django-poc",
     "memory": "2048",
     "essential": true,
     "portMappings": [{
