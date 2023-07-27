@@ -3,7 +3,7 @@
   "containerDefinitions": [
       {
           "name": "django-poc",
-          "image": "381558044129.dkr.ecr.eu-west-1.amazonaws.com/django-poc:43c1d4047ef00c807589130b02268eb874bd63c1",
+          "image": "381558044129.dkr.ecr.eu-west-1.amazonaws.com/django-poc",
           "cpu": 0,
           "memory": 2048,
           "portMappings": [
