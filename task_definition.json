@@ -1,20 +1,42 @@
 {
-  "executionRoleArn": "arn:aws:iam::381558044129:role/ecsTaskExecutionRole",
-  "containerDefinitions": [{
-    "name": "django-poc",
-    "image": "381558044129.dkr.ecr.eu-west-1.amazonaws.com/django-poc",
-    "memory": "2048",
-    "essential": true,
-    "portMappings": [{
-      "containerPort": 80,
-      "protocol": "tcp"
-    }]
-  }],
-  "volumes": [],
-  "requiresCompatibilities": ["FARGATE"],
-  "networkMode": "awsvpc",
-  "placementConstraints": [],
   "family": "application-stack",
+  "containerDefinitions": [
+      {
+          "name": "django-poc",
+          "image": "381558044129.dkr.ecr.eu-west-1.amazonaws.com/django-poc:43c1d4047ef00c807589130b02268eb874bd63c1",
+          "cpu": 0,
+          "memory": 2048,
+          "portMappings": [
+              {
+                  "name": "django-poc-80-tcp",
+                  "containerPort": 80,
+                  "hostPort": 80,
+                  "protocol": "tcp",
+                  "appProtocol": "http"
+              },
+              {
+                  "name": "django-poc-8000-tcp",
+                  "containerPort": 8000,
+                  "hostPort": 8000,
+                  "protocol": "tcp",
+                  "appProtocol": "http"
+              }
+          ],
+          "essential": true,
+          "environment": [],
+          "mountPoints": [],
+          "volumesFrom": []
+      }
+  ],
+  "executionRoleArn": "arn:aws:iam::381558044129:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "1024",
   "memory": "2048",
-  "cpu": "1024"
+  "runtimePlatform": {
+      "cpuArchitecture": "X86_64",
+      "operatingSystemFamily": "LINUX"
+  }
 }
