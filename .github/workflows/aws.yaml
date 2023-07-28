@@ -65,3 +65,5 @@ jobs:
         service: ${{ env.ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true
+    - name: List Secrets from AWS Secrets Manager
+      run: aws secretsmanager list-secrets
